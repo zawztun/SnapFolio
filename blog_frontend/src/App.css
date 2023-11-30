@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 4em;
+  margin: 4em;
+}
+.header_text {
+  font-size: 5em;
+}
+.header_description {
+  font-size: 1.5em;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-bottom: 4em;
+}
+
+.hero_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 7px;
+}
+
+.hero_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero_paragraph {
+  display: flex;
+}
+.hero_paragraph > div {
+  flex: 1;
+  margin-bottom: 4em;
+}
+
+.posts_container {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.body_paragraph {
+  text-decoration: none;
+}
+
+.posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex-basis: 48%;
+}
+.hero_paragraph post_body {
+  width: 70%;
+}
+.post_body_paragraph {
+  margin-inline: auto;
+  width: 70%;
+}
+
+.form_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  border: 0.1px solid rgb(243, 235, 235);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+}
+textarea {
+  outline: none;
+}
+input,
+textarea {
+  height: 4em;
+  min-width: 400px;
+  padding: 2em;
+  border: 0.3px rgb(221, 215, 215) solid;
+  border-radius: 5px;
+}
+.table_container {
+  margin-inline: auto;
+  overflow-x: auto;
+}
+th,
+td {
+  border: solid 1px black;
+  padding-inline: 1em;
+  padding-block: 0.4em;
+}
+th {
+  min-width: 200px;
+  text-align: start;
+}
+
+.form_btn {
+  display: flex;
+  gap: 0.5em;
+}
+@media (max-width: 600px) {
+  .table_container {
+    width: 100%;
+  }
+  .hero_header {
+    flex-direction: column;
+  }
+  .posts {
+    flex-direction: column;
+  }
+  .container {
+    padding: 1em;
+    margin: 0;
+  }
+
+  .hero_paragraph {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+  .hero_paragraph > div {
+    flex: auto;
+    margin-bottom: 0;
+  }
+  .hero_header {
+    align-items: flex-start;
+  }
+  .post_body_paragraph {
+    width: 100%;
+  }
+  .form_container {
+    border: none;
+    margin-inline: 2em;
+  }
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+  }
+}

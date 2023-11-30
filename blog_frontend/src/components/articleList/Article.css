@@ -1,0 +1,30 @@
+.btn {
+  width: 50%;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5em;
+  margin-right: 8em;
+}
+
+button {
+  min-width: 5em;
+  height: 3em;
+  background-color: rgb(116, 153, 193);
+  color: white;
+  border-radius: 5px;
+}
+.edit_btn {
+  color: white;
+}
+
+.delete_btn {
+  background-color: red;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+  }
+}
