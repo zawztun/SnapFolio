@@ -8,10 +8,13 @@ export default function EditForm() {
   const [body, setBody] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
 
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
+
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/post/${id}`)
+    fetch(`http://${host}:${port}/api/post/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setBody(res.body);
@@ -31,7 +34,7 @@ export default function EditForm() {
       body: body,
     };
 
-    await fetch(`http://localhost:8080/api/post/${id}`, {
+    await fetch(`http://${host}:${port}/api/post/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {

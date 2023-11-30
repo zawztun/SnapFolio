@@ -15,11 +15,13 @@ type Post = {
 
 function PostDetail() {
   const [detailPost, setDetailPost] = useState<Post>();
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
 
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/post/${id}`)
+    fetch(`http://${host}:${port}/api/post/${id}`)
       .then((res) => res.json())
       .then((detailPost) => setDetailPost(detailPost));
   }, []);

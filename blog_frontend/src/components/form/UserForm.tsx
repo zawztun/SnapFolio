@@ -6,6 +6,9 @@ export default function UserForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
+
   const onChangeHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -15,7 +18,7 @@ export default function UserForm() {
       password: password,
     };
 
-    await fetch("http://localhost:8080/api/user", {
+    await fetch(`http://${host}:${port}/api/user`, {
       method: "POST",
       mode: "cors",
       headers: {

@@ -59,7 +59,6 @@ function App() {
               <p>{recommended?.body}</p>
             </div>
           </div>
-
           <div className="posts">
             {posts?.map((p) => (
               <div key={p.id} className="post">

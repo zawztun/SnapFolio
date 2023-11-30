@@ -7,10 +7,13 @@ export default function UserEditForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
+
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/user/${id}`)
+    fetch(`http://${host}:${port}/api/user/${id}`)
       .then((res) => res.json())
       .then((res) => {
         console.log(res.username);
@@ -28,7 +31,7 @@ export default function UserEditForm() {
       password: password,
     };
 
-    await fetch(`http://localhost:8080/api/user/${id}`, {
+    await fetch(`http://${host}:${port}/api/user/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {

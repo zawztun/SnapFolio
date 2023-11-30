@@ -6,6 +6,8 @@ export default function ArticleForm() {
   const [description, setDescription] = useState("");
   const [body, setBody] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
 
   const inputHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ export default function ArticleForm() {
       body: body,
     };
 
-    await fetch("http://localhost:8080/api/post", {
+    await fetch(`http://${host}:${port}/api/post`, {
       method: "POST",
       mode: "cors",
       headers: {

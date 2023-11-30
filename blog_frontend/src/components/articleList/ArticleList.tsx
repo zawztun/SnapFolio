@@ -11,9 +11,11 @@ type Article = {
 
 const ArticleList = () => {
   const [article, setArticle] = useState<Article[] | null>(null);
+    const host = import.meta.env.VITE_HOST;
+    const port = import.meta.env.VITE_PORT;
 
   function fetchData() {
-    fetch("http://localhost:8080/api/post")
+    fetch(`http://${host}:${port}/api/post`)
       .then((res) => res.json())
       .then((article) => setArticle(article));
   }
@@ -23,7 +25,7 @@ const ArticleList = () => {
   }, []);
 
   function deletePost(id: number) {
-    fetch("http://localhost:8080/api/post/" + id, {
+    fetch(`http://${host}:${port}/api/post/`+ id, {
       method: "DELETE",
     }).then((res) => {
       if (res.status === 200) {
